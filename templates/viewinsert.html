@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<body>
+   
+
+    <div class="table-border">
+      <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table table-striped table-dark">
+          <tr>
+            <th scope="col">LIST NO.</th>
+            <th scope="col">FIRST NAME</th>
+            <th scope="col">LAST NAME</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">PHONE NUMBER</th>
+            <th scope="col">USER NAME</th>
+            <th scope="col">PASSWORD</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+          {% for i in cr %}
+            <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ i.firstname }}</td>
+            <td>{{ i.lastname }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.phonenumber }}</td>
+            <td>{{ i.username }}</td>
+            <td>{{ i.password }}</td>
+            <!-- <td><a href="{% url 'detailview' i.id %}" class="btn btn-primary">VIEW</a></td> -->
+            
+          </tr>
+          {% endfor %}
+          </table>
+      
+        </form>
+      
+</body>
+</html>

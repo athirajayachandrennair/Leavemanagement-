@@ -1,0 +1,30 @@
+
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+
+</head>
+
+<body>
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+    
+
+
+        <label class="label"><b>DETAILS OF {{cr.name}}</b></label>
+        <br><br><br><br>
+        <label for="">NAME : {{ cr.name}}</label><br>
+        <label for="">AGE : {{ cr.age}}</label><br>
+        <label for="">EMAIL : {{ cr.email}}</label><br>
+
+    </form>
+</body>
+
+</html>
